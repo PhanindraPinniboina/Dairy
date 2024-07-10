@@ -3,51 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Dairy - Today's story</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #essay-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            }
-        textarea {
-            width: 80%;
-            height: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="essay-container">
-        <h1>Dairy - Today's story</h1>
+        <h1>Dairy - Today's adventure</h1>
         <p>Date: <span id="date">time</span></p>
         <textarea id="essayInput" placeholder="Start typing your essay here..."></textarea>
         <p>Word Count: <span id="wordCount">0</span></p>
+        <button id="save-btn">Save the adventure</button>
     </div>
     
-    <script>
-        //date
-        const date = new Date();
-        document.getElementById("date").innerHTML = date;
-        // Function to count words in the textarea
-        function countWords() {
-            var essayText = document.getElementById('essayInput').value;
-            var wordCount = essayText.split(/\s+/).filter(function (word) {
-                return word.length > 0;
-            }).length;
-
-            document.getElementById('wordCount').textContent = wordCount;
-        }
-
-        // Attach the countWords function to the input event of the textarea
-        document.getElementById('essayInput').addEventListener('input', countWords);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
